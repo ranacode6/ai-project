@@ -14,7 +14,7 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
 
-    const res = await fetch('http://localhost:8080/feedback', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/feedback`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

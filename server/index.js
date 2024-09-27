@@ -6,12 +6,15 @@ import connectDatabase from './database/.db.js';
 import router from './routes/feedback.js';
 
 const app = express();
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+};
 
 dotenv.config();
 connectDatabase();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('', router);
 
