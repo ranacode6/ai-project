@@ -7,7 +7,7 @@ import router from './routes/feedback.js';
 
 const app = express();
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: [process.env.CLIENT_URL, 'http://localhost:3000'],
 };
 
 dotenv.config();
